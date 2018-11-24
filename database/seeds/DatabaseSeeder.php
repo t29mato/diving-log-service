@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(TideTypesTableSeeder::class);
         $this->call(WeatherTypesTableSeeder::class);
         $this->call(WindTypesTableSeeder::class);
+        $this->call(SuitsTypesTableSeeder::class);
     }
 }

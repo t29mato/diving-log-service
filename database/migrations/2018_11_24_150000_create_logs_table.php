@@ -32,7 +32,6 @@ class CreateLogsTable extends Migration
             $table->integer('water_temperature');
             $table->timestamp('entried_at');
             $table->timestamp('exited_at');
-            $table->integer('wave_height');
             $table->integer('max_depth');
             $table->integer('average_depth');
             $table->integer('weight');
