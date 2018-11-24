@@ -15,6 +15,11 @@ class CreateInstrocutorsTable extends Migration
     {
         Schema::create('instrocutors', function (Blueprint $table) {
             $table->increments('id');
+            $table->bigInteger('user_id');
+            $table->string('name');
+            $table->string('organization');
+            $table->integer('licence');
+            $table->text('memo');
             $table->timestamps();
         });
     }

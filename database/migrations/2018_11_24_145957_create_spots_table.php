@@ -15,6 +15,8 @@ class CreateSpotsTable extends Migration
     {
         Schema::create('spots', function (Blueprint $table) {
             $table->increments('id');
+            $table->bigInteger('user_id');
+            $table->string('name');
             $table->timestamps();
         });
     }

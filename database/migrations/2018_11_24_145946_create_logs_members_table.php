@@ -15,6 +15,9 @@ class CreateLogsMembersTable extends Migration
     {
         Schema::create('logs_members', function (Blueprint $table) {
             $table->increments('id');
+            $table->bigInteger('log_id');
+            $table->bigInteger('member_id');
+            $table->boolean('isBadi');
             $table->timestamps();
         });
     }

@@ -15,6 +15,8 @@ class CreateLogsPurposesTable extends Migration
     {
         Schema::create('logs_purposes', function (Blueprint $table) {
             $table->increments('id');
+            $table->bigInteger('log_id');
+            $table->bigInteger('purpose_id');
             $table->timestamps();
         });
     }
