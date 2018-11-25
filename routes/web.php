@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Auth\Middleware\Authenticate;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/log', 'LogController@index');
+Route::prefix('/log')->group(function (){
+    Route::get('/', 'LogController@index');
+});
+
+Route::prefix('/area')->group(function() {
+    Route::get('/', 'AreaController@index');
+    Route::get('add', 'AreaController@add')->middleware('auth');
+    Route::post('add', 'AreaController@create');
+});
+
 
 Auth::routes();
 
