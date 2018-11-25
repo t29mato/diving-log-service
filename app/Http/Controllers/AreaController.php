@@ -32,4 +32,22 @@ class AreaController extends Controller
         $area->fill($form)->save();
         return redirect('/area');
     }
+
+    public function edit(Request $request)
+    {
+        $area = Area::find($request->id);
+        return view('area.edit', [
+            'form' => $area,
+        ]);
+    }
+
+    public function update(Request $request)
+    {
+        $this->validate($request, Area::$rules);
+        $area = Area::find($request->id);
+        $form = $request->all();
+        unset($form['_token']);
+        $area->fill($form)->save();
+        return redirect('/area');
+    }
 }

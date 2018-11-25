@@ -25,6 +25,8 @@ Route::prefix('/area')->group(function() {
     Route::get('/', 'AreaController@index');
     Route::get('add', 'AreaController@add')->middleware('auth');
     Route::post('add', 'AreaController@create');
+    Route::get('edit', 'AreaController@edit')->middleware('auth');
+    Route::post('edit', 'AreaController@update');
 });
 
 

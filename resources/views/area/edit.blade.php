@@ -17,12 +17,13 @@
                         </ul>
                     </div>
                     @endif
-                    <form action="/area/add" method="post">
-                    {{ csrf_field() }}
+                    <form action="/area/edit" method="post">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="id" value="{{ $form->id }}">
                         <table>
                             <tr>
                                 <th>AreaName </th>
-                                <td><input type="text" name="name" value=""></td>
+                                <td><input type="text" name="name" value="{{ $form->name }}"></td>
                             </tr>
                             <tr>
                                 <th></th>

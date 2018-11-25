@@ -8,7 +8,7 @@ class Area extends Model
 {
     protected $guarded = array('id');
     public static $rules = [
-        'name' => 'required',
+        'name' => 'required|unique:areas',
     ];
 
     public function spots()
