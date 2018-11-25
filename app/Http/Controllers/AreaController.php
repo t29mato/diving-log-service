@@ -50,4 +50,16 @@ class AreaController extends Controller
         $area->fill($form)->save();
         return redirect('/area');
     }
+
+    public function delete(Request $request)
+    {
+        $area = Area::find($request->id);
+        return view('area.delete', ['form' => $area]);
+    }
+
+    public function remove(Request $request)
+    {
+        Area::find($request->id)->delete();
+        return redirect('/area');
+    }
 }

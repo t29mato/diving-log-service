@@ -27,6 +27,8 @@ Route::prefix('/area')->group(function() {
     Route::post('add', 'AreaController@create');
     Route::get('edit', 'AreaController@edit')->middleware('auth');
     Route::post('edit', 'AreaController@update');
+    Route::get('delete', 'AreaController@delete')->middleware('auth');
+    Route::post('delete', 'AreaController@remove');
 });
 
 
